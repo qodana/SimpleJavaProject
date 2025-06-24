@@ -8,3 +8,7 @@ include:
 bootstrap: |
   ./gradlew test
   ./gradlew jacocoTestReport
+failureConditions:
+  testCoverageThresholds:
+    fresh: 99
+    total: 32
