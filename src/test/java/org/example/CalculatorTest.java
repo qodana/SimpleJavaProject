@@ -47,4 +47,39 @@ public class CalculatorTest {
         int result = calculator.add(0, 0);
         assertEquals(0, result, "Adding 0 and 0 should return 0");
     }
+
+    @Test
+    public void testMultiplyWithPositiveNumbers() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(6, 4);
+        assertEquals(24, result, "Multiplying 6 and 4 should return 24");
+    }
+
+    @Test
+    public void testMultiplyWithNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(-3, -7);
+        assertEquals(21, result, "Multiplying -3 and -7 should return 21");
+    }
+
+    @Test
+    public void testMultiplyWithPositiveAndNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(8, -5);
+        assertEquals(-40, result, "Multiplying 8 and -5 should return -40");
+    }
+
+    @Test
+    public void testMultiplyWithZero() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(0, 10);
+        assertEquals(0, result, "Multiplying 0 and 10 should return 0");
+    }
+
+    @Test
+    public void testMultiplyWithBothZeroes() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(0, 0);
+        assertEquals(0, result, "Multiplying 0 and 0 should return 0");
+    }
 }
