@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.google.guava:guava:32.0.0-android'
+    implementation 'org.clojure:clojure:1.11.1'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    finalizedBy jacocoTestReport // Generates report after tests run
+}
+
+jacocoTestReport {
+    dependsOn test // Tests are required to run before generating the report
+    reports {
+        xml.required = true
+        csv.required = false
+        html.required = false
+
+        xml.outputLocation = file(".qodana/code-coverage/coverage.xml")
+    }
+}
