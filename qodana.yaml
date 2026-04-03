@@ -5,6 +5,7 @@ profile:
 include:
   - name: CheckDependencyLicenses
   - name: JvmCoverageInspection
+  - name: IncorrectFormatting
 bootstrap: |
   ./gradlew test
   ./gradlew jacocoTestReport
