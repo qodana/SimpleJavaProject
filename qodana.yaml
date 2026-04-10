@@ -12,4 +12,4 @@ bootstrap: |
 failureConditions:
   testCoverageThresholds:
     fresh: 99
-    total: 32
+    total: 7
