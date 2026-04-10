@@ -26,10 +26,10 @@ package org.example;
 
 public class FormattingExample {
 
+    // BAD FORMATTING SECTION 1: missing spaces around operators and after commas
     public int add(int a,int b){
         return a+b;
     }
-
     public void printResult(int x,int y){
         int sum=x+y;
         if(sum>0){
@@ -39,7 +39,58 @@ public class FormattingExample {
         }
     }
 
+    // CORRECTLY FORMATTED SECTION: follows IntelliJ code style
+    public String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public boolean isPositive(int number) {
+        return number > 0;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public double divide(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+        return a / b;
+    }
+
+    public double calculateAverage(int[] numbers) {
+        if (numbers.length == 0) {
+            return 0.0;
+        }
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
+    }
+
+    public String buildMessage(String prefix, String content, int repeat) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(prefix).append(": ");
+        for (int i = 0; i < repeat; i++) {
+            sb.append(content);
+        }
+        return sb.toString();
+    }
+
+    // BAD FORMATTING SECTION 2: missing spaces around operators and after commas
     public String format(String name,int age){
         return "Name: "+name+", Age: "+age;
+    }
+    private int calculate(int x,int y,int z){
+        return x*y+z;
+    }
+    public boolean compare(int a,int b){
+        return a>b;
     }
 }
